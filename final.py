@@ -3,19 +3,15 @@ import book, os, csv
 SECURITY_KEY = '2130'  # used to enter privilaged mode, used in print_menu
 DEFAULT_MENU = {'1':'Search for books', '2':'Borrow a book', '3':'Return a book', '0':'Exit the system'}
 ADMIN_MENU = {'4':'Add a book', '5':'Remove a book', '6':'Print catalog', '0':'Exit the system'}
-
 def load_books(filename:str, books:list): # returns # of books loaded
     """
     Load books from a CSV file into a list.
-
     Parameters:
         filename (str): The pathname to the CSV file.
         books (list): The list to store the loaded books.
-
     Returns:
         int: The number of books loaded.
     """
-    
     num_books_loaded = 0
     # opens the CSV file for reading
     file = open(filename, 'r', newline='')
@@ -41,7 +37,6 @@ def save_books(filename:str, books:list): # returns # of books saved
     Parameters:
         filename (str): The pathname to the CSV file.
         books (list): The list containing the books to save.
-
     Returns:
         int: The number of books saved.
     """ 
@@ -58,7 +53,6 @@ def save_books(filename:str, books:list): # returns # of books saved
         num_books_saved += 1
     file.close()
     return num_books_saved  
-
 def print_books(books:list):
     """
     Print the details of all books in the list.
